@@ -4,6 +4,7 @@
   --water-light: #24507a;
   --text: #e8f1fa;
   --nav-height: 56px;
+  --chart-bar: #3987e5;
   font-family: 'Pixelify Sans', system-ui, sans-serif;
   color: var(--text);
   background: var(--water-deep);
@@ -11,6 +12,15 @@
 
 * {
   box-sizing: border-box;
+}
+
+.visually-hidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  clip-path: inset(50%);
+  white-space: nowrap;
 }
 
 body {
@@ -114,4 +124,114 @@ body {
 
 .focus-screen__shop {
   color: var(--text);
+}
+
+.stats-screen {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.stats-screen__tiles {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 12px;
+  margin: 0;
+}
+
+.stats-screen__tile {
+  padding: 12px;
+  background: var(--water-mid);
+  border: 2px solid var(--water-light);
+}
+
+.stats-screen__tile dt {
+  font-size: 0.875rem;
+}
+
+.stats-screen__tile dd {
+  margin: 4px 0 0;
+  font-size: 1.75rem;
+}
+
+@media (min-width: 768px) {
+  .stats-screen__tiles {
+    grid-template-columns: repeat(4, 1fr);
+  }
+}
+
+.bar-chart {
+  margin: 0;
+}
+
+.bar-chart__title {
+  margin-bottom: 8px;
+}
+
+.bar-chart__plot {
+  display: flex;
+  gap: 2px;
+  height: 148px;
+  margin: 0;
+  padding: 20px 16px 0;
+  list-style: none;
+}
+
+.bar-chart__day {
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+  align-items: center;
+  min-width: 0;
+}
+
+.bar-chart__track {
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+  justify-content: flex-end;
+  align-items: center;
+  width: 100%;
+  border-bottom: 1px solid color-mix(in srgb, var(--text) 35%, transparent);
+}
+
+.bar-chart__bar {
+  position: relative;
+  width: 100%;
+  max-width: 24px;
+  min-height: 2px;
+  background: var(--chart-bar);
+  border-radius: 4px 4px 0 0;
+}
+
+.bar-chart__bar:hover {
+  filter: brightness(1.15);
+}
+
+.bar-chart__value {
+  position: absolute;
+  bottom: 100%;
+  left: 50%;
+  padding-bottom: 2px;
+  color: var(--text);
+  font-size: 0.875rem;
+  white-space: nowrap;
+  transform: translateX(-50%);
+}
+
+.bar-chart__value--start {
+  left: 0;
+  transform: none;
+}
+
+.bar-chart__value--end {
+  right: 0;
+  left: auto;
+  transform: none;
+}
+
+.bar-chart__weekday {
+  height: 24px;
+  padding-top: 4px;
+  font-size: 0.75rem;
 }
