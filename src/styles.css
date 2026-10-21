@@ -6,6 +6,7 @@
   --nav-height: 56px;
   --chart-bar: #3987e5;
   font-family: 'Pixelify Sans', system-ui, sans-serif;
+  font-variant-ligatures: none;
   color: var(--text);
   background: var(--water-deep);
 }
@@ -234,4 +235,75 @@ body {
   height: 24px;
   padding-top: 4px;
   font-size: 0.75rem;
+}
+
+.settings-screen {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  min-width: 0;
+}
+
+.settings-screen__section {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  padding: 12px;
+  background: var(--water-mid);
+  border: 2px solid var(--water-light);
+  min-width: 0;
+}
+
+.settings-screen__section h2 {
+  margin: 0;
+  font-size: 1.125rem;
+}
+
+.settings-screen__field {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  min-width: 0;
+}
+
+.settings-screen__field input[type='number'] {
+  width: 100%;
+  max-width: 8rem;
+  font: inherit;
+}
+
+.settings-screen__field input[type='file'] {
+  max-width: 100%;
+  font: inherit;
+}
+
+.settings-screen__toggle {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.settings-screen__hint {
+  margin: 0;
+  overflow-wrap: anywhere;
+}
+
+.settings-screen__hint:empty {
+  position: absolute;
+}
+
+.settings-screen__credits {
+  margin: 0;
+  padding-left: 20px;
+  overflow-wrap: anywhere;
+}
+
+.settings-screen__credits a {
+  color: inherit;
+}
+
+@media (min-width: 768px) {
+  .settings-screen {
+    max-width: 640px;
+  }
 }

@@ -39,5 +39,33 @@
     "completed": "Pomodori completati",
     "chartTitle": "Ultimi 14 giorni",
     "dayLabel": "{{date}}: {{duration}}"
+  },
+  "settings": {
+    "timerSection": "Timer",
+    "alertsSection": "Avvisi",
+    "backupSection": "Backup",
+    "creditsSection": "Crediti delle risorse",
+    "focusMinutes": "Durata del focus (min)",
+    "shortBreakMinutes": "Durata della pausa corta (min)",
+    "longBreakMinutes": "Durata della pausa lunga (min)",
+    "roundsBeforeLongBreak": "Giri prima della pausa lunga",
+    "autoStartBreak": "Avvia la pausa automaticamente",
+    "soundEnabled": "Suoni",
+    "notificationsEnabled": "Notifiche",
+    "notificationsDenied": "Notifiche non disponibili o negate dal browser",
+    "export": "Esporta salvataggio",
+    "import": {
+      "label": "Importa salvataggio",
+      "confirm": "Importare il file sovrascrive tutti i progressi attuali. Continuare?",
+      "success": "Salvataggio importato",
+      "readFailed": "Impossibile leggere il file",
+      "invalidJson": "Il file non è un JSON valido",
+      "invalidFormat": "Il file non è un salvataggio di Fishmodoro valido",
+      "newerVersion": "Il salvataggio proviene da una versione più recente di Fishmodoro",
+      "focusActive": "Non puoi importare durante un focus",
+      "locked": "Importazione bloccata durante il focus"
+    },
+    "creditsAuthor": "di {{author}}",
+    "creditsLicense": "Licenza: {{license}}"
   }
 }
