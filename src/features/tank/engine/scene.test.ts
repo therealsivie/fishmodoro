@@ -14,7 +14,7 @@ describe('scene', () => {
     ])
     expect(world.pois).toEqual([{ x: 124, y: 132 + 20 }])
     expect(world.tunnels).toEqual([
-      { itemId: 's', entry: { x: 114, y: 149 }, exit: { x: 134, y: 164 } },
+      { itemId: 's', entry: { x: 114, y: 149 }, exit: { x: 130, y: 166 } },
     ])
   })
 
@@ -33,7 +33,7 @@ describe('scene', () => {
     const withSkull = worldFor(320, [{ id: 's', catalogId: 'skull', x: 100, placed: true }])
     const rng = mulberry32(5)
     const [agent] = syncAgents([], [fish('a')], withSkull, rng)
-    const stuck = { ...agent, mode: 'tunnel' as const, insideItemId: 's', tunnelExit: { x: 134, y: 164 } }
+    const stuck = { ...agent, mode: 'tunnel' as const, insideItemId: 's', tunnelExit: { x: 130, y: 166 } }
     const [freed] = syncAgents([stuck], [fish('a')], worldFor(320, []), rng)
     expect(freed.mode).toBe('wander')
     expect(freed.insideItemId).toBeNull()
@@ -43,7 +43,7 @@ describe('scene', () => {
     const withSkull = worldFor(320, [{ id: 's', catalogId: 'skull', x: 100, placed: true }])
     const rng = mulberry32(5)
     const [agent] = syncAgents([], [fish('a')], withSkull, rng)
-    const inside = { ...agent, mode: 'tunnel' as const, insideItemId: 's', tunnelExit: { x: 134, y: 164 } }
+    const inside = { ...agent, mode: 'tunnel' as const, insideItemId: 's', tunnelExit: { x: 130, y: 166 } }
     const moved = worldFor(320, [{ id: 's', catalogId: 'skull', x: 200, placed: true }])
     expect(syncAgents([inside], [fish('a')], withSkull, rng)[0]).toEqual(inside)
     const [freed] = syncAgents([inside], [fish('a')], moved, rng)
