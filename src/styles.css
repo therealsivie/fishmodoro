@@ -1,0 +1,69 @@
+:root {
+  --water-deep: #1b3a5c;
+  --water-mid: #1f4569;
+  --water-light: #24507a;
+  --text: #e8f1fa;
+  --nav-height: 56px;
+  font-family: 'Pixelify Sans', system-ui, sans-serif;
+  color: var(--text);
+  background: var(--water-deep);
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  padding-bottom: var(--nav-height);
+  background: var(--water-deep);
+}
+
+.app-content {
+  padding: 16px;
+}
+
+.nav-bar {
+  position: fixed;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  height: var(--nav-height);
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  background: var(--water-mid);
+  border-top: 2px solid var(--water-light);
+  z-index: 10;
+}
+
+.nav-bar__link {
+  display: flex;
+  gap: 4px;
+  align-items: center;
+  padding: 8px 12px;
+  font-size: 1.5rem;
+  color: var(--text);
+  text-decoration: none;
+  background: transparent;
+}
+
+.nav-bar__link:hover,
+.nav-bar__link:focus-visible {
+  background: var(--water-light);
+}
+
+@media (min-width: 768px) {
+  body {
+    padding-bottom: 0;
+    padding-top: var(--nav-height);
+  }
+
+  .nav-bar {
+    top: 0;
+    bottom: auto;
+    border-top: 0;
+    border-bottom: 2px solid var(--water-light);
+  }
+}

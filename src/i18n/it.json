@@ -1,5 +1,19 @@
 {
   "app": {
-    "name": "Fishmodoro"
+    "name": "Fishmodoro",
+    "tabTitle": "{{clock}} · Fishmodoro"
+  },
+  "nav": {
+    "label": "Navigazione principale",
+    "focus": "Focus",
+    "tank": "Acquario",
+    "shop": "Negozio",
+    "stats": "Statistiche",
+    "settings": "Impostazioni",
+    "shopLocked": "Negozio bloccato durante il focus"
+  },
+  "alerts": {
+    "focusCompleted": "Focus finito: è ora di una pausa",
+    "breakEnded": "Pausa finita: pronto per il prossimo focus?"
   }
 }

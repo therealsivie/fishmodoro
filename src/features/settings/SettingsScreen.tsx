@@ -1,7 +1,7 @@
 import { useTranslation } from 'react-i18next'
 
-export default function App() {
+export function SettingsScreen() {
   const { t } = useTranslation()
 
-  return <h1>{t('app.name')}</h1>
+  return <h1>{t('nav.settings')}</h1>
 }
