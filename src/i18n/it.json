@@ -15,5 +15,21 @@
   "alerts": {
     "focusCompleted": "Focus finito: è ora di una pausa",
     "breakEnded": "Pausa finita: pronto per il prossimo focus?"
+  },
+  "focus": {
+    "phase": {
+      "focus": "Focus",
+      "shortBreak": "Pausa corta",
+      "longBreak": "Pausa lunga"
+    },
+    "start": "Avvia",
+    "pause": "Sospendi",
+    "resume": "Riprendi",
+    "interrupt": "Interrompi",
+    "startBreak": "Avvia pausa",
+    "skipBreak": "Salta pausa",
+    "paused": "Sospeso",
+    "shopInvite": "Hai {{minutes}} min da spendere",
+    "rounds": "{{done}} di {{total}} giri"
   }
 }
