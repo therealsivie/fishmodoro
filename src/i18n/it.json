@@ -31,5 +31,13 @@
     "paused": "Sospeso",
     "shopInvite": "Hai {{minutes}} min da spendere",
     "rounds": "{{done}} di {{total}} giri"
+  },
+  "stats": {
+    "currentStreak": "Giorni consecutivi",
+    "bestStreak": "Record di giorni consecutivi",
+    "totalFocus": "Focus totale",
+    "completed": "Pomodori completati",
+    "chartTitle": "Ultimi 14 giorni",
+    "dayLabel": "{{date}}: {{duration}}"
   }
 }
