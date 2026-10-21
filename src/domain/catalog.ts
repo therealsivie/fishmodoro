@@ -107,7 +107,7 @@ export const CATALOG: readonly CatalogEntry[] = [
   decoration('skull', 600, 48, 40, [{ x: 24, y: 20 }], {
     unique: true,
     behavior: 'skull',
-    tunnel: { entry: { x: 14, y: 17 }, exit: { x: 34, y: 32 } },
+    tunnel: { entry: { x: 14, y: 17 }, exit: { x: 30, y: 34 } },
   }),
 ]
 
