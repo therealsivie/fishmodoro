@@ -18,7 +18,7 @@ export const DEFAULT_SETTINGS: Settings = {
   notificationsEnabled: false,
 }
 
-const NUMBER_RANGES = {
+export const NUMBER_RANGES = {
   focusMinutes: [1, 180],
   shortBreakMinutes: [1, 180],
   longBreakMinutes: [1, 180],
