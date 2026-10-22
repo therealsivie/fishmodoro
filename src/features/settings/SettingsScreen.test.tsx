@@ -191,7 +191,7 @@ describe('SettingsScreen', () => {
   it('lists asset credits with safe external links', () => {
     render(<SettingsScreen />)
 
-    const link = screen.getByRole('link', { name: 'Pixelify Sans' })
+    const link = screen.getByRole('link', { name: 'VT323' })
     expect(link).toHaveAttribute('target', '_blank')
     expect(link).toHaveAttribute('rel', 'noopener noreferrer')
     expect(screen.getByRole('link', { name: 'Sweetie 16' })).toHaveAttribute(

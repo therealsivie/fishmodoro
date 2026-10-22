@@ -14,9 +14,9 @@ export const ASSET_CREDITS: AssetCredit[] = [
     url: 'https://lospec.com/palette-list/sweetie-16',
   },
   {
-    name: 'Pixelify Sans',
-    author: 'Stefie Justprince',
+    name: 'VT323',
+    author: 'Peter Hull',
     license: 'SIL Open Font License 1.1',
-    url: 'https://fonts.google.com/specimen/Pixelify+Sans',
+    url: 'https://fonts.google.com/specimen/VT323',
   },
 ]

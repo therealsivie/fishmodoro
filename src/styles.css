@@ -5,8 +5,10 @@
   --text: #e8f1fa;
   --nav-height: 56px;
   --chart-bar: #3987e5;
-  font-family: 'Pixelify Sans', system-ui, sans-serif;
+  font-family: 'VT323', ui-monospace, monospace;
   font-variant-ligatures: none;
+  font-synthesis: none;
+  font-size-adjust: 0.5;
   color: var(--text);
   background: var(--water-deep);
 }

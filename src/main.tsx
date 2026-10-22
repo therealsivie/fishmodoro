@@ -1,4 +1,4 @@
-import '@fontsource/pixelify-sans'
+import '@fontsource/vt323'
 import { StrictMode } from 'react'
 import { createRoot } from 'react-dom/client'
 import { HashRouter } from 'react-router-dom'
