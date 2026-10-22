@@ -67,5 +67,73 @@
     },
     "creditsAuthor": "di {{author}}",
     "creditsLicense": "Licenza: {{license}}"
+  },
+  "catalog": {
+    "goldfish": "Pesce rosso",
+    "guppy": "Guppy",
+    "neonTetra": "Neon",
+    "clownfish": "Pesce pagliaccio",
+    "angelfish": "Pesce angelo",
+    "pufferfish": "Pesce palla",
+    "seaweed": "Alga",
+    "grass": "Erba",
+    "fern": "Felce",
+    "pebbles": "Ciottoli",
+    "redCoral": "Corallo rosso",
+    "anubias": "Anubias",
+    "shell": "Conchiglia",
+    "rockArch": "Arco di roccia",
+    "diverHelmet": "Elmo da palombaro",
+    "amphora": "Anfora",
+    "treasureChest": "Forziere",
+    "skull": "Teschio"
+  },
+  "tank": {
+    "canvasLabel": "Acquario",
+    "readOnly": "Durante il focus puoi solo guardare",
+    "reserve": "Riserva ({{count}})",
+    "store": "Riponi",
+    "inventory": {
+      "title": "Riserva",
+      "fish": "Pesci",
+      "items": "Piante e decorazioni",
+      "empty": "Niente da mostrare",
+      "putInTank": "Metti in vasca",
+      "moveToReserve": "Sposta in riserva",
+      "tankFull": "Vasca piena: non c'è più posto",
+      "unknownItem": "Elemento non trovato",
+      "focusActive": "Non puoi cambiare la vasca durante un focus"
+    }
+  },
+  "shop": {
+    "locked": "Negozio bloccato",
+    "lockedUntil": "torna tra {{minutes}} min",
+    "lockedPaused": "Focus sospeso",
+    "balance": "Saldo: {{minutes}} min",
+    "categories": {
+      "label": "Categorie",
+      "fish": "Pesci",
+      "plant": "Piante",
+      "decoration": "Decorazioni"
+    },
+    "price": "{{minutes}} min",
+    "buy": "Compra",
+    "missing": "mancano {{minutes}} min",
+    "owned": "Posseduto",
+    "fishPlaced": "In vasca!",
+    "reserveNotice": "Vasca piena: è nella riserva",
+    "errors": {
+      "insufficientCredits": "Crediti insufficienti",
+      "alreadyOwned": "Lo possiedi già",
+      "unknownItem": "Articolo non trovato",
+      "maxLevel": "Vasca al livello massimo",
+      "tankFull": "Vasca piena",
+      "focusActive": "Non puoi comprare durante un focus"
+    },
+    "tank": {
+      "title": "Vasca",
+      "maxLevel": "La vasca è al livello massimo",
+      "next": "Livello {{level}}: {{maxFish}} pesci, {{maxItems}} oggetti, larghezza {{width}}"
+    }
   }
 }

@@ -2,6 +2,17 @@ import { SAND_HEIGHT, TANK_HEIGHT, getEntry } from '../../../domain/catalog'
 import type { CatalogEntry, Point } from '../../../domain/catalog'
 import type { OwnedItem } from '../../../domain/economy'
 
+export const FRAME_WIDTH = 2
+const TAP_TOLERANCE = 3
+
+export function clampItemX(x: number, itemWidth: number, tankWidth: number): number {
+  return Math.min(tankWidth - itemWidth, Math.max(0, x))
+}
+
+export function exceedsTapTolerance(dx: number, dy: number): boolean {
+  return Math.hypot(dx, dy) >= TAP_TOLERANCE
+}
+
 export function computeScale(availableHeight: number): number {
   return Math.max(1, Math.floor(availableHeight / TANK_HEIGHT))
 }

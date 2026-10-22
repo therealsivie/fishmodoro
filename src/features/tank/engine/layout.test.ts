@@ -1,7 +1,7 @@
 import { describe, expect, it } from 'vitest'
 import { getEntry } from '../../../domain/catalog'
 import type { OwnedItem } from '../../../domain/economy'
-import { computeScale, drawOrder, hitTestItem, itemTop, toLogical } from './layout'
+import { clampItemX, computeScale, exceedsTapTolerance, drawOrder, hitTestItem, itemTop, toLogical } from './layout'
 
 const item = (id: string, catalogId: string, x: number, placed = true): OwnedItem => ({ id, catalogId, x, placed })
 
@@ -10,6 +10,19 @@ describe('layout', () => {
     expect(computeScale(100)).toBe(1)
     expect(computeScale(560)).toBe(3)
     expect(computeScale(900)).toBe(5)
+  })
+
+  it('clampItemX keeps the item inside the tank', () => {
+    expect(clampItemX(-5, 20, 180)).toBe(0)
+    expect(clampItemX(170, 20, 180)).toBe(160)
+    expect(clampItemX(50, 20, 180)).toBe(50)
+  })
+
+  it('exceedsTapTolerance triggers from 3 px of movement', () => {
+    expect(exceedsTapTolerance(2, 0)).toBe(false)
+    expect(exceedsTapTolerance(3, 0)).toBe(true)
+    expect(exceedsTapTolerance(0, -4)).toBe(true)
+    expect(exceedsTapTolerance(2, 2)).toBe(false)
   })
 
   it('itemTop sits items in the middle of the sand band', () => {
