@@ -7,6 +7,12 @@ export interface AssetCredit {
 
 export const ASSET_CREDITS: AssetCredit[] = [
   {
+    name: 'Sweetie 16',
+    author: 'GrafxKid',
+    license: 'Citata per cortesia',
+    url: 'https://lospec.com/palette-list/sweetie-16',
+  },
+  {
     name: 'Pixelify Sans',
     author: 'Stefie Justprince',
     license: 'SIL Open Font License 1.1',

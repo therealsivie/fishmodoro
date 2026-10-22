@@ -194,5 +194,9 @@ describe('SettingsScreen', () => {
     const link = screen.getByRole('link', { name: 'Pixelify Sans' })
     expect(link).toHaveAttribute('target', '_blank')
     expect(link).toHaveAttribute('rel', 'noopener noreferrer')
+    expect(screen.getByRole('link', { name: 'Sweetie 16' })).toHaveAttribute(
+      'href',
+      'https://lospec.com/palette-list/sweetie-16',
+    )
   })
 })
