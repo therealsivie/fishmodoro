@@ -336,7 +336,8 @@ body {
 
 .tank-screen button,
 .inventory-panel button,
-.shop-screen button {
+.shop-screen button,
+.settings-screen button {
   padding: 6px 12px;
   font: inherit;
   color: var(--text);
@@ -347,7 +348,8 @@ body {
 
 .tank-screen button:disabled,
 .inventory-panel button:disabled,
-.shop-screen button:disabled {
+.shop-screen button:disabled,
+.settings-screen button:disabled {
   opacity: 0.6;
   cursor: default;
 }

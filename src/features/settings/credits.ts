@@ -1,7 +1,8 @@
 export interface AssetCredit {
   name: string
   author: string
-  license: string
+  license?: string
+  licenseKey?: string
   url: string
 }
 
@@ -9,7 +10,7 @@ export const ASSET_CREDITS: AssetCredit[] = [
   {
     name: 'Sweetie 16',
     author: 'GrafxKid',
-    license: 'Citata per cortesia',
+    licenseKey: 'settings.creditsCourtesy',
     url: 'https://lospec.com/palette-list/sweetie-16',
   },
   {

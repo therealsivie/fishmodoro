@@ -57,6 +57,21 @@ export function ClockProvider({ children }: { children: ReactNode }) {
   }, [])
 
   useEffect(() => {
+    if (timer.status !== 'running') return
+    let timeout: ReturnType<typeof setTimeout>
+    const arm = () => {
+      timeout = setTimeout(() => {
+        const current = Date.now()
+        setNow(current)
+        runTick(current)
+        if (useGameStore.getState().timer === timer) arm()
+      }, Math.max(0, remainingMs(timer, Date.now())))
+    }
+    arm()
+    return () => clearTimeout(timeout)
+  }, [timer])
+
+  useEffect(() => {
     document.title =
       timer.status === 'idle'
         ? t('app.name')

@@ -198,5 +198,6 @@ describe('SettingsScreen', () => {
       'href',
       'https://lospec.com/palette-list/sweetie-16',
     )
+    expect(screen.getByText(/Licenza: Citata per cortesia/)).toBeInTheDocument()
   })
 })

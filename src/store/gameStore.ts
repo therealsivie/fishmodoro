@@ -76,9 +76,13 @@ export const useGameStore = create<GameState>()(
           const { timer, settings } = get()
           set({ timer: timerDomain.start(timer, settings, now) })
         },
-        pauseTimer: (now = Date.now()) => set({ timer: timerDomain.pause(get().timer, now) }),
+        pauseTimer: (now = Date.now()) => {
+          if (get().tick(now).length > 0) return
+          set({ timer: timerDomain.pause(get().timer, now) })
+        },
         resumeTimer: (now = Date.now()) => set({ timer: timerDomain.resume(get().timer, now) }),
         interruptTimer: (now = Date.now()) => {
+          if (get().tick(now).length > 0) return
           settle((s) => timerDomain.interrupt(s.timer, s.settings, now))
         },
         skipBreak: (now = Date.now()) => {

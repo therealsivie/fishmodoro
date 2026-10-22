@@ -3,7 +3,10 @@ import { act, cleanup, render } from '@testing-library/react'
 import { afterEach, beforeEach, describe, expect, it, vi } from 'vitest'
 import { createDefaultSave } from '../domain/save'
 import { useGameStore } from '../store/gameStore'
+import { playChime } from './alerts'
 import { ClockProvider } from './ClockProvider'
+
+vi.mock('./alerts', () => ({ playChime: vi.fn(), notifyPhaseEnd: vi.fn() }))
 
 function setVisibility(state: 'visible' | 'hidden') {
   Object.defineProperty(document, 'visibilityState', { configurable: true, get: () => state })
@@ -60,6 +63,46 @@ describe('ClockProvider', () => {
       vi.advanceTimersByTime(25 * 60_000)
     })
     expect(tick).toHaveBeenCalled()
+  })
+
+  it('settles exactly at the end of the phase even between interval ticks', () => {
+    useGameStore.setState({ settings: { ...useGameStore.getState().settings, soundEnabled: true } })
+    useGameStore.getState().startTimer(Date.now() - 100)
+    setVisibility('hidden')
+    render(<ClockProvider>x</ClockProvider>)
+
+    act(() => {
+      vi.advanceTimersByTime(25 * 60_000 - 101)
+    })
+    expect(useGameStore.getState().timer.phase).toBe('focus')
+    expect(playChime).not.toHaveBeenCalled()
+
+    act(() => {
+      vi.advanceTimersByTime(1)
+    })
+    expect(useGameStore.getState().timer.phase).toBe('shortBreak')
+    expect(useGameStore.getState().stats.completedPomodoros).toBe(1)
+    expect(playChime).toHaveBeenCalledOnce()
+  })
+
+  it('re-arms the end-of-phase timeout when it fires before the phase is over', () => {
+    useGameStore.getState().startTimer(Date.now() - 100)
+    setVisibility('hidden')
+    render(<ClockProvider>x</ClockProvider>)
+
+    act(() => {
+      vi.advanceTimersByTime(25 * 60_000 - 150)
+    })
+    vi.setSystemTime(Date.now() - 10)
+    act(() => {
+      vi.advanceTimersByTime(50)
+    })
+    expect(useGameStore.getState().timer.phase).toBe('focus')
+
+    act(() => {
+      vi.advanceTimersByTime(10)
+    })
+    expect(useGameStore.getState().timer.phase).toBe('shortBreak')
   })
 
   it('updates the tab title while a timer is active', () => {

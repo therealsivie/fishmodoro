@@ -182,7 +182,7 @@ export function SettingsScreen() {
               <a href={credit.url} target="_blank" rel="noopener noreferrer">
                 {credit.name}
               </a>{' '}
-              {t('settings.creditsAuthor', { author: credit.author })} · {t('settings.creditsLicense', { license: credit.license })}
+              {t('settings.creditsAuthor', { author: credit.author })} · {t('settings.creditsLicense', { license: credit.licenseKey ? t(credit.licenseKey) : credit.license })}
             </li>
           ))}
         </ul>
