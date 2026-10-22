@@ -3,6 +3,8 @@
 Un timer pomodoro nel browser: ogni minuto di concentrazione si trasforma in crediti
 con cui comprare pesci in pixel art per il tuo acquario. Più ti concentri, più la vasca si popola.
 
+**Provala qui: [therealsivie.github.io/fishmodoro](https://therealsivie.github.io/fishmodoro/)**
+
 ## Comandi
 
 - `npm install`: installa le dipendenze
