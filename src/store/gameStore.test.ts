@@ -16,6 +16,25 @@ test('interrupt credits seconds and records stats', () => {
   expect(useGameStore.getState().stats.totalFocusSeconds).toBe(90)
 })
 
+test('interrupt right after the focus expired completes it instead of interrupting', () => {
+  const s = useGameStore.getState()
+  s.startTimer(0)
+  s.interruptTimer(25 * 60_000 + 100)
+  const { stats, credits } = useGameStore.getState()
+  expect(stats.completedPomodoros).toBe(1)
+  expect(credits).toBe(1500)
+})
+
+test('pause right after the focus expired settles it instead of pausing', () => {
+  const s = useGameStore.getState()
+  s.startTimer(0)
+  s.pauseTimer(25 * 60_000 + 100)
+  const { timer, stats } = useGameStore.getState()
+  expect(stats.completedPomodoros).toBe(1)
+  expect(timer.phase).toBe('shortBreak')
+  expect(timer.status).not.toBe('paused')
+})
+
 test('tick credits a completed focus exactly once', () => {
   useGameStore.getState().startTimer(0)
   expect(
